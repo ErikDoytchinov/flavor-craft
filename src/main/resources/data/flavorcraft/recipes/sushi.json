@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "flavorcraft:rice"
+    },
+    "X": {
+      "item": "minecraft:salmon"
+    },
+    "I": {
+      "item": "minecraft:kelp"
+    }
+  },
+  "pattern": [
+    "#XI"
+  ],
+  "result": {
+    "count": 1,
+    "item": "flavorcraft:sushi"
+  }
+}

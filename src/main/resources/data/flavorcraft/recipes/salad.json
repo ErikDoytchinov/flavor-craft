@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "flavorcraft:tomato"
+    },
+    "X": {
+      "item": "flavorcraft:lettuce"
+    },
+    "I": {
+      "item": "minecraft:bowl"
+    }
+  },
+  "pattern": [
+    "#X",
+    "I "
+  ],
+  "result": {
+    "count": 1,
+    "item": "flavorcraft:salad"
+  }
+}

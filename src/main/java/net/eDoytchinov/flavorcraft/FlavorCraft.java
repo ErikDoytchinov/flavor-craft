@@ -1,10 +1,17 @@
 package net.eDoytchinov.flavorcraft;
 
 import com.mojang.logging.LogUtils;
+import net.eDoytchinov.flavorcraft.block.ModBlocks;
+import net.eDoytchinov.flavorcraft.custom.MillingStation;
+import net.eDoytchinov.flavorcraft.item.ModCreativeModTab;
+import net.eDoytchinov.flavorcraft.item.ModItems;
 import net.minecraft.client.Minecraft;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.CreativeModeTabEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -15,21 +22,27 @@ import net.minecraftforge.registries.ForgeRegistries;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
-@Mod(flavor_craft.MOD_ID)
-public class flavor_craft
+@Mod(FlavorCraft.MOD_ID)
+public class FlavorCraft
 {
     public static final String MOD_ID = "flavorcraft";
     private static final Logger LOGGER = LogUtils.getLogger();
 
-    public flavor_craft()
+    public FlavorCraft()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
+
+        // Register the addCreative method for modloading
+        modEventBus.addListener(this::addCreative);
 
     }
 
@@ -40,6 +53,20 @@ public class flavor_craft
         LOGGER.info("DIRT BLOCK >> {}", ForgeRegistries.BLOCKS.getKey(Blocks.DIRT));
     }
 
+    private void addCreative(CreativeModeTabEvent.BuildContents event) {
+        if(event.getTab() == ModCreativeModTab.FoodStation){
+            event.accept(ModBlocks.MillingStation);
+        }
+
+        if(event.getTab() == ModCreativeModTab.Foods){
+            event.accept(ModItems.RICE);
+            event.accept(ModItems.TOMATO);
+            event.accept(ModItems.LETTUCE);
+            event.accept(ModItems.STRAWBERRY);
+            event.accept(ModItems.SALAD);
+            event.accept(ModItems.SUSHI);
+        }
+    }
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
     @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents {
