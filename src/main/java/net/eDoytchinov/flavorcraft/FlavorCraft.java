@@ -1,6 +1,7 @@
 package net.eDoytchinov.flavorcraft;
 
 import com.mojang.logging.LogUtils;
+import net.eDoytchinov.flavorcraft.block.BlockEntity;
 import net.eDoytchinov.flavorcraft.block.ModBlocks;
 import net.eDoytchinov.flavorcraft.custom.MillingStation;
 import net.eDoytchinov.flavorcraft.item.ModCreativeModTab;
@@ -34,6 +35,7 @@ public class FlavorCraft
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+        BlockEntity.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
@@ -55,7 +57,7 @@ public class FlavorCraft
 
     private void addCreative(CreativeModeTabEvent.BuildContents event) {
         if(event.getTab() == ModCreativeModTab.FoodStation){
-            event.accept(ModBlocks.MillingStation);
+            event.accept(ModBlocks.MILLINGSTATION);
         }
 
         if(event.getTab() == ModCreativeModTab.Foods){

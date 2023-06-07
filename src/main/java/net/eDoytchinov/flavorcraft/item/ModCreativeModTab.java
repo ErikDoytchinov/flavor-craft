@@ -22,7 +22,7 @@ public class ModCreativeModTab {
                         .title(Component.translatable("creativemodetab.foods")));
 
         FoodStation = event.registerCreativeModeTab(new ResourceLocation(FlavorCraft.MOD_ID, "food_station"),
-                builder -> builder.icon(() -> new ItemStack(ModBlocks.MillingStation.get()))
+                builder -> builder.icon(() -> new ItemStack(ModBlocks.MILLINGSTATION.get()))
                         .title(Component.translatable("creativemodetab.food_station")));
     }
 
