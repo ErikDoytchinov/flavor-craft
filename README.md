@@ -1,13 +1,7 @@
 
-Source installation information for modders
+"FlavorCraft: Culinary Adventures"
 -------------------------------------------
-This code follows the Minecraft Forge installation methodology. It will apply
-some small patches to the vanilla MCP source code, giving you and it access 
-to some of the data and functions you need to build a successful mod.
-
-Note also that the patches are built against "un-renamed" MCP source code (aka
-SRG Names) - this means that you will not be able to read them directly against
-normal code.
+Introducing "FlavorCraft: Culinary Adventures"! Immerse yourself in a delightful culinary experience with this Minecraft mod. Discover a world of delectable flavors as you explore new foods, craft intricate recipes, and cultivate bountiful crops. Unleash your inner chef and create mouthwatering dishes using a variety of cooking tools and specialized crafting tables. From savory meals to sweet treats, this mod expands the culinary landscape of Minecraft, offering a delightful array of food-related items and ingredients. Embark on a gastronomic adventure and let your creativity flourish in the world of FlavorCraft!
 
 Setup Process:
 ==============================
