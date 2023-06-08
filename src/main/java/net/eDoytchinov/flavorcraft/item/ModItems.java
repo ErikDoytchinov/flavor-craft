@@ -32,6 +32,19 @@ public class ModItems {
 
     public static final RegistryObject<Item> SUSHI = ITEMS.register("sushi",
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(7).saturationMod(3).build())));
+
+    public static final RegistryObject<Item> DOUGH = ITEMS.register("dough",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(7).saturationMod(4).build())));
+
+    public static final RegistryObject<Item> PIZZA = ITEMS.register("pizza",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(10).saturationMod(8).build())));
+
+    public static final RegistryObject<Item> CHOCOLATE = ITEMS.register("chocolate",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationMod(4).build())));
+
+    public static final RegistryObject<Item> SALAMI = ITEMS.register("salami",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationMod(4).build())));
+
     public static void register(IEventBus eventBus){
         ITEMS.register(eventBus);
     }

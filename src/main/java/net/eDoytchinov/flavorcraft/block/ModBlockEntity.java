@@ -8,7 +8,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
-public class BlockEntity {
+public class ModBlockEntity {
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, FlavorCraft.MOD_ID);
 
     public static final RegistryObject<BlockEntityType<MillingStationEntity>> MILLINGSTATION = BLOCK_ENTITIES.register("milling_station",

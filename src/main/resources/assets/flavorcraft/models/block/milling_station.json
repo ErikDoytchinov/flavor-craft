@@ -1,6 +1,7 @@
 {
-  "parent" : "minecraft:block/cube_all",
+  "parent": "minecraft:block/cube_column",
   "textures": {
-    "all": "flavorcraft:block/milling_station"
+    "end": "flavorcraft:block/milling_station_top",
+    "side": "minecraft:block/dark_oak_log"
   }
 }

@@ -1,14 +1,14 @@
 package net.eDoytchinov.flavorcraft;
 
 import com.mojang.logging.LogUtils;
-import net.eDoytchinov.flavorcraft.block.BlockEntity;
+import net.eDoytchinov.flavorcraft.block.ModBlockEntity;
 import net.eDoytchinov.flavorcraft.block.ModBlocks;
-import net.eDoytchinov.flavorcraft.custom.MillingStation;
 import net.eDoytchinov.flavorcraft.item.ModCreativeModTab;
 import net.eDoytchinov.flavorcraft.item.ModItems;
+import net.eDoytchinov.flavorcraft.screen.MillingStationScreen;
+import net.eDoytchinov.flavorcraft.screen.ModMenuTypes;
 import net.minecraft.client.Minecraft;
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -35,7 +35,9 @@ public class FlavorCraft
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
-        BlockEntity.register(modEventBus);
+        ModBlockEntity.register(modEventBus);
+        ModMenuTypes.register(modEventBus);
+
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
@@ -67,6 +69,10 @@ public class FlavorCraft
             event.accept(ModItems.STRAWBERRY);
             event.accept(ModItems.SALAD);
             event.accept(ModItems.SUSHI);
+            event.accept(ModItems.DOUGH);
+            event.accept(ModItems.PIZZA);
+            event.accept(ModItems.CHOCOLATE);
+            event.accept(ModItems.SALAMI);
         }
     }
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
@@ -77,6 +83,8 @@ public class FlavorCraft
             // Some client setup code
             LOGGER.info("HELLO FROM CLIENT SETUP");
             LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
+
+            MenuScreens.register(ModMenuTypes.MILLING_STATION.get(), MillingStationScreen::new);
         }
     }
 }
