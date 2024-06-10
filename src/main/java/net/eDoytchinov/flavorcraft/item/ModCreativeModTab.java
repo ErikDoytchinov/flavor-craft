@@ -20,10 +20,6 @@ public class ModCreativeModTab {
         Foods = event.registerCreativeModeTab(new ResourceLocation(FlavorCraft.MOD_ID, "foods"),
                 builder -> builder.icon(() -> new ItemStack(ModItems.RICE.get()))
                         .title(Component.translatable("creativemodetab.foods")));
-
-        FoodStation = event.registerCreativeModeTab(new ResourceLocation(FlavorCraft.MOD_ID, "food_station"),
-                builder -> builder.icon(() -> new ItemStack(ModBlocks.MILLINGSTATION.get()))
-                        .title(Component.translatable("creativemodetab.food_station")));
     }
 
 }

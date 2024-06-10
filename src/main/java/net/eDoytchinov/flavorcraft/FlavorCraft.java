@@ -5,7 +5,6 @@ import net.eDoytchinov.flavorcraft.block.ModBlockEntity;
 import net.eDoytchinov.flavorcraft.block.ModBlocks;
 import net.eDoytchinov.flavorcraft.item.ModCreativeModTab;
 import net.eDoytchinov.flavorcraft.item.ModItems;
-import net.eDoytchinov.flavorcraft.screen.MillingStationScreen;
 import net.eDoytchinov.flavorcraft.screen.ModMenuTypes;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.MenuScreens;
@@ -58,10 +57,6 @@ public class FlavorCraft
     }
 
     private void addCreative(CreativeModeTabEvent.BuildContents event) {
-        if(event.getTab() == ModCreativeModTab.FoodStation){
-            event.accept(ModBlocks.MILLINGSTATION);
-        }
-
         if(event.getTab() == ModCreativeModTab.Foods){
             event.accept(ModItems.RICE);
             event.accept(ModItems.TOMATO);
@@ -83,8 +78,6 @@ public class FlavorCraft
             // Some client setup code
             LOGGER.info("HELLO FROM CLIENT SETUP");
             LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
-
-            MenuScreens.register(ModMenuTypes.MILLING_STATION.get(), MillingStationScreen::new);
         }
     }
 }

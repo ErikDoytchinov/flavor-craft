@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/cube_column",
-  "textures": {
-    "end": "flavorcraft:block/milling_station_top",
-    "side": "minecraft:block/dark_oak_log"
-  }
-}

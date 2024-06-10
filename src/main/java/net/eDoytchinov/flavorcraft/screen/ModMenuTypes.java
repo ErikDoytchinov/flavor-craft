@@ -1,7 +1,6 @@
 package net.eDoytchinov.flavorcraft.screen;
 
 import net.eDoytchinov.flavorcraft.FlavorCraft;
-import net.eDoytchinov.flavorcraft.block.entity.MillingStationEntity;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraftforge.common.extensions.IForgeMenuType;
@@ -15,8 +14,6 @@ public class ModMenuTypes {
     public static final DeferredRegister<MenuType<?>> MENUS =
             DeferredRegister.create(ForgeRegistries.MENU_TYPES, FlavorCraft.MOD_ID); // registers our menu types
 
-    public static final RegistryObject<MenuType<MillingStationMenu>> MILLING_STATION =
-            registerMenuType(MillingStationMenu::new,"milling_station_menu");
 
     private static <T extends AbstractContainerMenu> RegistryObject<MenuType<T>> registerMenuType(IContainerFactory<T> factory,
                                                                                                   String name) {

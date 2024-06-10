@@ -10,8 +10,5 @@
   "item.flavorcraft.pizza": "Pizza",
   "item.flavorcraft.chocolate": "Chocolate",
 
-  "creativemodetab.foods": "Foods",
-  "creativemodetab.food_station": "Food Stations",
-
-  "block.flavorcraft.milling_station": "Milling Station"
+  "creativemodetab.foods": "Foods"
 }
