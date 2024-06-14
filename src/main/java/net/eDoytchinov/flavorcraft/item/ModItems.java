@@ -1,6 +1,9 @@
 package net.eDoytchinov.flavorcraft.item;
 
 import net.eDoytchinov.flavorcraft.FlavorCraft;
+import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BowlFoodItem;
 import net.minecraft.world.item.CreativeModeTab;
@@ -28,7 +31,7 @@ public class ModItems {
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(3).build())));
 
     public static final RegistryObject<Item> SALAD = ITEMS.register("salad",
-            () -> new BowlFoodItem(new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationMod(3).build()).stacksTo(1)));
+            () -> new BowlFoodItem(new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationMod(3).effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 2400, 1), 1.0F).build()).stacksTo(1)));
 
     public static final RegistryObject<Item> SUSHI = ITEMS.register("sushi",
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(7).saturationMod(3).build())));
@@ -44,6 +47,9 @@ public class ModItems {
 
     public static final RegistryObject<Item> SALAMI = ITEMS.register("salami",
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationMod(4).build())));
+
+    public static final RegistryObject<Item> CHEESE = ITEMS.register("cheese",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(4).build())));
 
     public static void register(IEventBus eventBus){
         ITEMS.register(eventBus);

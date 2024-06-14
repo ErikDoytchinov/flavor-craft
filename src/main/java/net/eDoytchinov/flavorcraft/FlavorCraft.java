@@ -68,6 +68,7 @@ public class FlavorCraft
             event.accept(ModItems.PIZZA);
             event.accept(ModItems.CHOCOLATE);
             event.accept(ModItems.SALAMI);
+            event.accept(ModItems.CHEESE);
         }
     }
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
