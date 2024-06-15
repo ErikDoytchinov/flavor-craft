@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "minecraft:cooked_beef"
+    },
+    "S": {
+      "item": "flavorcraft:taco_shell"
+    },
+    "L": {
+      "item": "flavorcraft:lettuce"
+    },
+    "T": {
+      "item": "flavorcraft:tomato"
+    }
+  },
+  "pattern": [
+    "#L",
+    "ST"
+  ],
+  "result": {
+    "count": 1,
+    "item": "flavorcraft:beef_taco"
+  }
+}

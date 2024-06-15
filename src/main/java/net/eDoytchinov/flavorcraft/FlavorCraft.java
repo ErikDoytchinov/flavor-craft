@@ -7,7 +7,6 @@ import net.eDoytchinov.flavorcraft.item.ModCreativeModTab;
 import net.eDoytchinov.flavorcraft.item.ModItems;
 import net.eDoytchinov.flavorcraft.screen.ModMenuTypes;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -23,13 +22,11 @@ import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(FlavorCraft.MOD_ID)
-public class FlavorCraft
-{
+public class FlavorCraft {
     public static final String MOD_ID = "flavorcraft";
     private static final Logger LOGGER = LogUtils.getLogger();
 
-    public FlavorCraft()
-    {
+    public FlavorCraft() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         ModItems.register(modEventBus);
@@ -49,15 +46,14 @@ public class FlavorCraft
 
     }
 
-    private void commonSetup(final FMLCommonSetupEvent event)
-    {
+    private void commonSetup(final FMLCommonSetupEvent event) {
         // Some common setup code
         LOGGER.info("HELLO FROM COMMON SETUP");
         LOGGER.info("DIRT BLOCK >> {}", ForgeRegistries.BLOCKS.getKey(Blocks.DIRT));
     }
 
     private void addCreative(CreativeModeTabEvent.BuildContents event) {
-        if(event.getTab() == ModCreativeModTab.Foods){
+        if (event.getTab() == ModCreativeModTab.Foods) {
             event.accept(ModItems.RICE);
             event.accept(ModItems.TOMATO);
             event.accept(ModItems.LETTUCE);
@@ -69,8 +65,12 @@ public class FlavorCraft
             event.accept(ModItems.CHOCOLATE);
             event.accept(ModItems.SALAMI);
             event.accept(ModItems.CHEESE);
+            event.accept(ModItems.PINEAPPLE);
+            event.accept(ModItems.TACO_SHELL);
+            event.accept(ModItems.BEEF_TACO);
         }
     }
+
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
     @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents {
